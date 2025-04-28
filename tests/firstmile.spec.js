@@ -147,7 +147,7 @@ test.describe("multiple packages", () => {
 
 test("visual test", async ({ page }) => {
   await page.goto(firstMileHomePage);
-  await page.screenshot({
+  await expect(page).toHaveScreenshot({
     mask: page.locator(".wrapper-home-diagram")[0],
   });
 });
